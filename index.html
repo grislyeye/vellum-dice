@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>vellum-dice demo</title>
+    <script type="module">
+      import './vellum-dice.js'
+    </script>
+    <script>
+      new EventSource('/esbuild').addEventListener('change', () =>
+        location.reload(),
+      )
+    </script>
+  </head>
+
+  <body>
+    <p>You have <vellum-dice>3d6+3</vellum-dice> Strength.</p>
+  </body>
+</html>

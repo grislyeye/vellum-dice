@@ -12,6 +12,8 @@ Web component and interactive dice roller. Inspired by [javalent/dice-roller](ht
 
 Add the following wherever you need a roll: `<vellum-dice>2d6+3</vellum-dice>`.
 
+Add the `animation` attribute to animate the component: `<vellum-dice animation>2d6+3</vellum-dice>`.
+
 ## Installation
 
 You have a few options (choose one of these):
@@ -27,7 +29,7 @@ Include the `<script>` in your markup:
 ```html
 <script
   type="module"
-  src="https://www.unpkg.com/vellum-dice@0.0.0/vellum-dice.js"
+  src="https://www.unpkg.com/vellum-dice@0.1.0/vellum-dice.js"
 ></script>
 <p>You have <vellum-dice> 3d6+3 </vellum-dice> Strength.</p>
 ```

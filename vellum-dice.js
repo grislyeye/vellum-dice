@@ -18,8 +18,8 @@
   var s = Symbol();
   var o = /* @__PURE__ */ new WeakMap();
   var n = class {
-    constructor(t7, e6, o6) {
-      if (this._$cssResult$ = true, o6 !== s)
+    constructor(t7, e6, o7) {
+      if (this._$cssResult$ = true, o7 !== s)
         throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");
       this.cssText = t7, this.t = e6;
     }
@@ -38,22 +38,22 @@
   };
   var r = (t7) => new n("string" == typeof t7 ? t7 : t7 + "", void 0, s);
   var i = (t7, ...e6) => {
-    const o6 = 1 === t7.length ? t7[0] : e6.reduce((e7, s6, o7) => e7 + ((t8) => {
+    const o7 = 1 === t7.length ? t7[0] : e6.reduce((e7, s6, o8) => e7 + ((t8) => {
       if (true === t8._$cssResult$)
         return t8.cssText;
       if ("number" == typeof t8)
         return t8;
       throw Error("Value passed to 'css' function must be a 'css' function result: " + t8 + ". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.");
-    })(s6) + t7[o7 + 1], t7[0]);
-    return new n(o6, t7, s);
+    })(s6) + t7[o8 + 1], t7[0]);
+    return new n(o7, t7, s);
   };
-  var S = (s6, o6) => {
+  var S = (s6, o7) => {
     if (e)
-      s6.adoptedStyleSheets = o6.map((t7) => t7 instanceof CSSStyleSheet ? t7 : t7.styleSheet);
+      s6.adoptedStyleSheets = o7.map((t7) => t7 instanceof CSSStyleSheet ? t7 : t7.styleSheet);
     else
-      for (const e6 of o6) {
-        const o7 = document.createElement("style"), n6 = t.litNonce;
-        void 0 !== n6 && o7.setAttribute("nonce", n6), o7.textContent = e6.cssText, s6.appendChild(o7);
+      for (const e6 of o7) {
+        const o8 = document.createElement("style"), n6 = t.litNonce;
+        void 0 !== n6 && o8.setAttribute("nonce", n6), o8.textContent = e6.cssText, s6.appendChild(o8);
       }
   };
   var c = e ? (t7) => t7 : (t7) => t7 instanceof CSSStyleSheet ? ((t8) => {
@@ -111,8 +111,8 @@
     }
     static createProperty(t7, s6 = y) {
       if (s6.state && (s6.attribute = false), this._$Ei(), this.elementProperties.set(t7, s6), !s6.noAccessor) {
-        const i6 = Symbol(), r6 = this.getPropertyDescriptor(t7, i6, s6);
-        void 0 !== r6 && e2(this.prototype, t7, r6);
+        const i6 = Symbol(), r7 = this.getPropertyDescriptor(t7, i6, s6);
+        void 0 !== r7 && e2(this.prototype, t7, r7);
       }
     }
     static getPropertyDescriptor(t7, s6, i6) {
@@ -124,8 +124,8 @@
       return { get() {
         return e6?.call(this);
       }, set(s7) {
-        const r6 = e6?.call(this);
-        h5.call(this, s7), this.requestUpdate(t7, r6, i6);
+        const r7 = e6?.call(this);
+        h5.call(this, s7), this.requestUpdate(t7, r7, i6);
       }, configurable: true, enumerable: true };
     }
     static getPropertyOptions(t7) {
@@ -209,15 +209,15 @@
     _$EC(t7, s6) {
       const i6 = this.constructor.elementProperties.get(t7), e6 = this.constructor._$Eu(t7, i6);
       if (void 0 !== e6 && true === i6.reflect) {
-        const r6 = (void 0 !== i6.converter?.toAttribute ? i6.converter : u).toAttribute(s6, i6.type);
-        this._$Em = t7, null == r6 ? this.removeAttribute(e6) : this.setAttribute(e6, r6), this._$Em = null;
+        const r7 = (void 0 !== i6.converter?.toAttribute ? i6.converter : u).toAttribute(s6, i6.type);
+        this._$Em = t7, null == r7 ? this.removeAttribute(e6) : this.setAttribute(e6, r7), this._$Em = null;
       }
     }
     _$AK(t7, s6) {
       const i6 = this.constructor, e6 = i6._$Eh.get(t7);
       if (void 0 !== e6 && this._$Em !== e6) {
-        const t8 = i6.getPropertyOptions(e6), r6 = "function" == typeof t8.converter ? { fromAttribute: t8.converter } : void 0 !== t8.converter?.fromAttribute ? t8.converter : u;
-        this._$Em = e6, this[e6] = r6.fromAttribute(s6, t8.type), this._$Em = null;
+        const t8 = i6.getPropertyOptions(e6), r7 = "function" == typeof t8.converter ? { fromAttribute: t8.converter } : void 0 !== t8.converter?.fromAttribute ? t8.converter : u;
+        this._$Em = e6, this[e6] = r7.fromAttribute(s6, t8.type), this._$Em = null;
       }
     }
     requestUpdate(t7, s6, i6) {
@@ -329,21 +329,21 @@
     return void 0 !== s2 ? s2.createHTML(i6) : i6;
   }
   var P = (t7, i6) => {
-    const s6 = t7.length - 1, o6 = [];
-    let r6, l3 = 2 === i6 ? "<svg>" : "", c5 = f2;
+    const s6 = t7.length - 1, o7 = [];
+    let r7, l3 = 2 === i6 ? "<svg>" : "", c5 = f2;
     for (let i7 = 0; i7 < s6; i7++) {
       const s7 = t7[i7];
       let a3, u3, d3 = -1, y3 = 0;
       for (; y3 < s7.length && (c5.lastIndex = y3, u3 = c5.exec(s7), null !== u3); )
-        y3 = c5.lastIndex, c5 === f2 ? "!--" === u3[1] ? c5 = v : void 0 !== u3[1] ? c5 = _ : void 0 !== u3[2] ? ($.test(u3[2]) && (r6 = RegExp("</" + u3[2], "g")), c5 = m) : void 0 !== u3[3] && (c5 = m) : c5 === m ? ">" === u3[0] ? (c5 = r6 ?? f2, d3 = -1) : void 0 === u3[1] ? d3 = -2 : (d3 = c5.lastIndex - u3[2].length, a3 = u3[1], c5 = void 0 === u3[3] ? m : '"' === u3[3] ? g : p2) : c5 === g || c5 === p2 ? c5 = m : c5 === v || c5 === _ ? c5 = f2 : (c5 = m, r6 = void 0);
+        y3 = c5.lastIndex, c5 === f2 ? "!--" === u3[1] ? c5 = v : void 0 !== u3[1] ? c5 = _ : void 0 !== u3[2] ? ($.test(u3[2]) && (r7 = RegExp("</" + u3[2], "g")), c5 = m) : void 0 !== u3[3] && (c5 = m) : c5 === m ? ">" === u3[0] ? (c5 = r7 ?? f2, d3 = -1) : void 0 === u3[1] ? d3 = -2 : (d3 = c5.lastIndex - u3[2].length, a3 = u3[1], c5 = void 0 === u3[3] ? m : '"' === u3[3] ? g : p2) : c5 === g || c5 === p2 ? c5 = m : c5 === v || c5 === _ ? c5 = f2 : (c5 = m, r7 = void 0);
       const x2 = c5 === m && t7[i7 + 1].startsWith("/>") ? " " : "";
-      l3 += c5 === f2 ? s7 + n3 : d3 >= 0 ? (o6.push(a3), s7.slice(0, d3) + e3 + s7.slice(d3) + h2 + x2) : s7 + h2 + (-2 === d3 ? i7 : x2);
+      l3 += c5 === f2 ? s7 + n3 : d3 >= 0 ? (o7.push(a3), s7.slice(0, d3) + e3 + s7.slice(d3) + h2 + x2) : s7 + h2 + (-2 === d3 ? i7 : x2);
     }
-    return [C(t7, l3 + (t7[s6] || "<?>") + (2 === i6 ? "</svg>" : "")), o6];
+    return [C(t7, l3 + (t7[s6] || "<?>") + (2 === i6 ? "</svg>" : "")), o7];
   };
   var V = class _V {
     constructor({ strings: t7, _$litType$: s6 }, n6) {
-      let r6;
+      let r7;
       this.parts = [];
       let c5 = 0, a3 = 0;
       const u3 = t7.length - 1, d3 = this.parts, [f5, v2] = P(t7, s6);
@@ -351,30 +351,30 @@
         const t8 = this.el.content.firstChild;
         t8.replaceWith(...t8.childNodes);
       }
-      for (; null !== (r6 = E.nextNode()) && d3.length < u3; ) {
-        if (1 === r6.nodeType) {
-          if (r6.hasAttributes())
-            for (const t8 of r6.getAttributeNames())
+      for (; null !== (r7 = E.nextNode()) && d3.length < u3; ) {
+        if (1 === r7.nodeType) {
+          if (r7.hasAttributes())
+            for (const t8 of r7.getAttributeNames())
               if (t8.endsWith(e3)) {
-                const i6 = v2[a3++], s7 = r6.getAttribute(t8).split(h2), e6 = /([.?@])?(.*)/.exec(i6);
-                d3.push({ type: 1, index: c5, name: e6[2], strings: s7, ctor: "." === e6[1] ? k : "?" === e6[1] ? H : "@" === e6[1] ? I : R }), r6.removeAttribute(t8);
+                const i6 = v2[a3++], s7 = r7.getAttribute(t8).split(h2), e6 = /([.?@])?(.*)/.exec(i6);
+                d3.push({ type: 1, index: c5, name: e6[2], strings: s7, ctor: "." === e6[1] ? k : "?" === e6[1] ? H : "@" === e6[1] ? I : R }), r7.removeAttribute(t8);
               } else
-                t8.startsWith(h2) && (d3.push({ type: 6, index: c5 }), r6.removeAttribute(t8));
-          if ($.test(r6.tagName)) {
-            const t8 = r6.textContent.split(h2), s7 = t8.length - 1;
+                t8.startsWith(h2) && (d3.push({ type: 6, index: c5 }), r7.removeAttribute(t8));
+          if ($.test(r7.tagName)) {
+            const t8 = r7.textContent.split(h2), s7 = t8.length - 1;
             if (s7 > 0) {
-              r6.textContent = i3 ? i3.emptyScript : "";
+              r7.textContent = i3 ? i3.emptyScript : "";
               for (let i6 = 0; i6 < s7; i6++)
-                r6.append(t8[i6], l2()), E.nextNode(), d3.push({ type: 2, index: ++c5 });
-              r6.append(t8[s7], l2());
+                r7.append(t8[i6], l2()), E.nextNode(), d3.push({ type: 2, index: ++c5 });
+              r7.append(t8[s7], l2());
             }
           }
-        } else if (8 === r6.nodeType)
-          if (r6.data === o3)
+        } else if (8 === r7.nodeType)
+          if (r7.data === o3)
             d3.push({ type: 2, index: c5 });
           else {
             let t8 = -1;
-            for (; -1 !== (t8 = r6.data.indexOf(h2, t8 + 1)); )
+            for (; -1 !== (t8 = r7.data.indexOf(h2, t8 + 1)); )
               d3.push({ type: 7, index: c5 }), t8 += h2.length - 1;
           }
         c5++;
@@ -389,8 +389,8 @@
     if (i6 === w)
       return i6;
     let h5 = void 0 !== e6 ? s6._$Co?.[e6] : s6._$Cl;
-    const o6 = c3(i6) ? void 0 : i6._$litDirective$;
-    return h5?.constructor !== o6 && (h5?._$AO?.(false), void 0 === o6 ? h5 = void 0 : (h5 = new o6(t7), h5._$AT(t7, s6, e6)), void 0 !== e6 ? (s6._$Co ??= [])[e6] = h5 : s6._$Cl = h5), void 0 !== h5 && (i6 = N(t7, h5._$AS(t7, i6.values), h5, e6)), i6;
+    const o7 = c3(i6) ? void 0 : i6._$litDirective$;
+    return h5?.constructor !== o7 && (h5?._$AO?.(false), void 0 === o7 ? h5 = void 0 : (h5 = new o7(t7), h5._$AT(t7, s6, e6)), void 0 !== e6 ? (s6._$Co ??= [])[e6] = h5 : s6._$Cl = h5), void 0 !== h5 && (i6 = N(t7, h5._$AS(t7, i6.values), h5, e6)), i6;
   }
   var S2 = class {
     constructor(t7, i6) {
@@ -405,13 +405,13 @@
     u(t7) {
       const { el: { content: i6 }, parts: s6 } = this._$AD, e6 = (t7?.creationScope ?? r3).importNode(i6, true);
       E.currentNode = e6;
-      let h5 = E.nextNode(), o6 = 0, n6 = 0, l3 = s6[0];
+      let h5 = E.nextNode(), o7 = 0, n6 = 0, l3 = s6[0];
       for (; void 0 !== l3; ) {
-        if (o6 === l3.index) {
+        if (o7 === l3.index) {
           let i7;
           2 === l3.type ? i7 = new M(h5, h5.nextSibling, this, t7) : 1 === l3.type ? i7 = new l3.ctor(h5, l3.name, l3.strings, this, t7) : 6 === l3.type && (i7 = new L(h5, this, t7)), this._$AV.push(i7), l3 = s6[++n6];
         }
-        o6 !== l3?.index && (h5 = E.nextNode(), o6++);
+        o7 !== l3?.index && (h5 = E.nextNode(), o7++);
       }
       return E.currentNode = r3, e6;
     }
@@ -494,16 +494,16 @@
     }
     _$AI(t7, i6 = this, s6, e6) {
       const h5 = this.strings;
-      let o6 = false;
+      let o7 = false;
       if (void 0 === h5)
-        t7 = N(this, t7, i6, 0), o6 = !c3(t7) || t7 !== this._$AH && t7 !== w, o6 && (this._$AH = t7);
+        t7 = N(this, t7, i6, 0), o7 = !c3(t7) || t7 !== this._$AH && t7 !== w, o7 && (this._$AH = t7);
       else {
         const e7 = t7;
-        let n6, r6;
+        let n6, r7;
         for (t7 = h5[0], n6 = 0; n6 < h5.length - 1; n6++)
-          r6 = N(this, e7[s6 + n6], i6, n6), r6 === w && (r6 = this._$AH[n6]), o6 ||= !c3(r6) || r6 !== this._$AH[n6], r6 === T ? t7 = T : t7 !== T && (t7 += (r6 ?? "") + h5[n6 + 1]), this._$AH[n6] = r6;
+          r7 = N(this, e7[s6 + n6], i6, n6), r7 === w && (r7 = this._$AH[n6]), o7 ||= !c3(r7) || r7 !== this._$AH[n6], r7 === T ? t7 = T : t7 !== T && (t7 += (r7 ?? "") + h5[n6 + 1]), this._$AH[n6] = r7;
       }
-      o6 && !e6 && this.j(t7);
+      o7 && !e6 && this.j(t7);
     }
     j(t7) {
       t7 === T ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, t7 ?? "");
@@ -591,13 +591,50 @@
   r4?.({ LitElement: s3 });
   (globalThis.litElementVersions ??= []).push("4.0.4");
 
+  // node_modules/@lit/reactive-element/decorators/custom-element.js
+  var t3 = (t7) => (e6, o7) => {
+    void 0 !== o7 ? o7.addInitializer(() => {
+      customElements.define(t7, e6);
+    }) : customElements.define(t7, e6);
+  };
+
+  // node_modules/@lit/reactive-element/decorators/property.js
+  var o4 = { attribute: true, type: String, converter: u, reflect: false, hasChanged: f };
+  var r5 = (t7 = o4, e6, r7) => {
+    const { kind: n6, metadata: i6 } = r7;
+    let s6 = globalThis.litPropertyMetadata.get(i6);
+    if (void 0 === s6 && globalThis.litPropertyMetadata.set(i6, s6 = /* @__PURE__ */ new Map()), s6.set(r7.name, t7), "accessor" === n6) {
+      const { name: o7 } = r7;
+      return { set(r8) {
+        const n7 = e6.get.call(this);
+        e6.set.call(this, r8), this.requestUpdate(o7, n7, t7);
+      }, init(e7) {
+        return void 0 !== e7 && this.P(o7, void 0, t7), e7;
+      } };
+    }
+    if ("setter" === n6) {
+      const { name: o7 } = r7;
+      return function(r8) {
+        const n7 = this[o7];
+        e6.call(this, r8), this.requestUpdate(o7, n7, t7);
+      };
+    }
+    throw Error("Unsupported decorator location: " + n6);
+  };
+  function n4(t7) {
+    return (e6, o7) => "object" == typeof o7 ? r5(t7, e6, o7) : ((t8, e7, o8) => {
+      const r7 = e7.hasOwnProperty(o8);
+      return e7.constructor.createProperty(o8, r7 ? { ...t8, wrapped: true } : t8), r7 ? Object.getOwnPropertyDescriptor(e7, o8) : void 0;
+    })(t7, e6, o7);
+  }
+
   // node_modules/lit-html/directive-helpers.js
-  var { I: t3 } = z;
-  var f3 = (o6) => void 0 === o6.strings;
+  var { I: t4 } = z;
+  var f3 = (o7) => void 0 === o7.strings;
 
   // node_modules/lit-html/directive.js
-  var t4 = { ATTRIBUTE: 1, CHILD: 2, PROPERTY: 3, BOOLEAN_ATTRIBUTE: 4, EVENT: 5, ELEMENT: 6 };
-  var e4 = (t7) => (...e6) => ({ _$litDirective$: t7, values: e6 });
+  var t5 = { ATTRIBUTE: 1, CHILD: 2, PROPERTY: 3, BOOLEAN_ATTRIBUTE: 4, EVENT: 5, ELEMENT: 6 };
+  var e5 = (t7) => (...e6) => ({ _$litDirective$: t7, values: e6 });
   var i4 = class {
     constructor(t7) {
     }
@@ -624,7 +661,7 @@
       i7._$AO?.(t7, false), s4(i7, t7);
     return true;
   };
-  var o4 = (i6) => {
+  var o5 = (i6) => {
     let t7, e6;
     do {
       if (void 0 === (t7 = i6._$AM))
@@ -632,7 +669,7 @@
       e6 = t7._$AN, e6.delete(i6), i6 = t7;
     } while (0 === e6?.size);
   };
-  var r5 = (i6) => {
+  var r6 = (i6) => {
     for (let t7; t7 = i6._$AM; i6 = t7) {
       let e6 = t7._$AN;
       if (void 0 === e6)
@@ -643,32 +680,32 @@
     }
   };
   function h3(i6) {
-    void 0 !== this._$AN ? (o4(this), this._$AM = i6, r5(this)) : this._$AM = i6;
+    void 0 !== this._$AN ? (o5(this), this._$AM = i6, r6(this)) : this._$AM = i6;
   }
-  function n4(i6, t7 = false, e6 = 0) {
-    const r6 = this._$AH, h5 = this._$AN;
+  function n5(i6, t7 = false, e6 = 0) {
+    const r7 = this._$AH, h5 = this._$AN;
     if (void 0 !== h5 && 0 !== h5.size)
       if (t7)
-        if (Array.isArray(r6))
-          for (let i7 = e6; i7 < r6.length; i7++)
-            s4(r6[i7], false), o4(r6[i7]);
+        if (Array.isArray(r7))
+          for (let i7 = e6; i7 < r7.length; i7++)
+            s4(r7[i7], false), o5(r7[i7]);
         else
-          null != r6 && (s4(r6, false), o4(r6));
+          null != r7 && (s4(r7, false), o5(r7));
       else
         s4(this, i6);
   }
   var c4 = (i6) => {
-    i6.type == t4.CHILD && (i6._$AP ??= n4, i6._$AQ ??= h3);
+    i6.type == t5.CHILD && (i6._$AP ??= n5, i6._$AQ ??= h3);
   };
   var f4 = class extends i4 {
     constructor() {
       super(...arguments), this._$AN = void 0;
     }
     _$AT(i6, t7, e6) {
-      super._$AT(i6, t7, e6), r5(this), this.isConnected = i6._$AU;
+      super._$AT(i6, t7, e6), r6(this), this.isConnected = i6._$AU;
     }
     _$AO(i6, t7 = true) {
-      i6 !== this.isConnected && (this.isConnected = i6, i6 ? this.reconnected?.() : this.disconnected?.()), t7 && (s4(this, i6), o4(this));
+      i6 !== this.isConnected && (this.isConnected = i6, i6 ? this.reconnected?.() : this.disconnected?.()), t7 && (s4(this, i6), o5(this));
     }
     setValue(t7) {
       if (f3(this._$Ct))
@@ -685,7 +722,7 @@
   };
 
   // node_modules/lit-html/directives/private-async-helpers.js
-  var t5 = async (t7, s6) => {
+  var t6 = async (t7, s6) => {
     for await (const i6 of t7)
       if (false === await s6(i6))
         return;
@@ -720,27 +757,27 @@
   };
 
   // node_modules/lit-html/directives/async-replace.js
-  var o5 = class extends f4 {
+  var o6 = class extends f4 {
     constructor() {
       super(...arguments), this._$CK = new s5(this), this._$CX = new i5();
     }
     render(i6, s6) {
       return w;
     }
-    update(i6, [s6, r6]) {
+    update(i6, [s6, r7]) {
       if (this.isConnected || this.disconnected(), s6 === this._$CJ)
         return w;
       this._$CJ = s6;
       let n6 = 0;
-      const { _$CK: o6, _$CX: h5 } = this;
-      return t5(s6, async (t7) => {
+      const { _$CK: o7, _$CX: h5 } = this;
+      return t6(s6, async (t7) => {
         for (; h5.get(); )
           await h5.get();
-        const i7 = o6.deref();
+        const i7 = o7.deref();
         if (void 0 !== i7) {
           if (i7._$CJ !== s6)
             return false;
-          void 0 !== r6 && (t7 = r6(t7, n6)), i7.commitValue(t7, n6), n6++;
+          void 0 !== r7 && (t7 = r7(t7, n6)), i7.commitValue(t7, n6), n6++;
         }
         return true;
       }), w;
@@ -755,14 +792,7 @@
       this._$CK.reconnect(this), this._$CX.resume();
     }
   };
-  var h4 = e4(o5);
-
-  // node_modules/@lit/reactive-element/decorators/custom-element.js
-  var t6 = (t7) => (e6, o6) => {
-    void 0 !== o6 ? o6.addInitializer(() => {
-      customElements.define(t7, e6);
-    }) : customElements.define(t7, e6);
-  };
+  var h4 = e5(o6);
 
   // src/dice.ts
   var EMPTY_STR_TO_UNDEFINED = (str) => str === "" ? void 0 : str;
@@ -817,20 +847,30 @@
     while (count > 0) {
       yield die.roll().result;
       count--;
-      await new Promise((r6) => setTimeout(r6, 50));
+      await new Promise((r7) => setTimeout(r7, 30));
     }
   }
   var VellumDice = class extends s3 {
+    constructor() {
+      super(...arguments);
+      this.animation = false;
+    }
     get die() {
       return this.textContent ? Die.from(this.textContent.trim()) : void 0;
     }
     reroll() {
       this.requestUpdate();
     }
+    roll() {
+      if (this.die) {
+        return this.animation ? h4(rollAnimation(this.die, 6)) : this.die.roll().result;
+      }
+      return;
+    }
     render() {
       return x`
       <span @click="${this.reroll}">
-        ${this.die ? h4(rollAnimation(this.die, 4)) : ""} (<slot></slot>&#9860;)
+        ${this.roll()} (<slot></slot>&#9860;)
       </span>
     `;
     }
@@ -843,8 +883,11 @@
       font-weight: bold;
     }
   `;
+  __decorateClass([
+    n4({ type: Boolean })
+  ], VellumDice.prototype, "animation", 2);
   VellumDice = __decorateClass([
-    t6("vellum-dice")
+    t3("vellum-dice")
   ], VellumDice);
 })();
 /*! Bundled license information:
@@ -881,41 +924,6 @@ lit-html/is-server.js:
   (**
    * @license
    * Copyright 2022 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   *)
-
-lit-html/directive-helpers.js:
-  (**
-   * @license
-   * Copyright 2020 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   *)
-
-lit-html/directive.js:
-  (**
-   * @license
-   * Copyright 2017 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   *)
-
-lit-html/async-directive.js:
-  (**
-   * @license
-   * Copyright 2017 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   *)
-
-lit-html/directives/private-async-helpers.js:
-  (**
-   * @license
-   * Copyright 2021 Google LLC
-   * SPDX-License-Identifier: BSD-3-Clause
-   *)
-
-lit-html/directives/async-replace.js:
-  (**
-   * @license
-   * Copyright 2017 Google LLC
    * SPDX-License-Identifier: BSD-3-Clause
    *)
 
@@ -983,6 +991,41 @@ lit-html/directives/async-replace.js:
    *)
 
 @lit/reactive-element/decorators/query-assigned-nodes.js:
+  (**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+lit-html/directive-helpers.js:
+  (**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+lit-html/directive.js:
+  (**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+lit-html/async-directive.js:
+  (**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+lit-html/directives/private-async-helpers.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+lit-html/directives/async-replace.js:
   (**
    * @license
    * Copyright 2017 Google LLC

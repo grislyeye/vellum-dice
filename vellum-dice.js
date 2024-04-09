@@ -847,7 +847,7 @@
     while (count > 0) {
       yield die.roll().result;
       count--;
-      await new Promise((r7) => setTimeout(r7, 30));
+      await new Promise((r7) => setTimeout(r7, 50));
     }
   }
   var VellumDice = class extends s3 {

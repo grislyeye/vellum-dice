@@ -11,6 +11,7 @@ function rollDice(sides: number) {
 
 export abstract class Die {
   abstract roll(): Roll
+  abstract get max(): number
 
   static from(notation: string): Die {
     switch (notation) {
@@ -23,6 +24,10 @@ export abstract class Die {
 }
 
 const D66 = new (class extends Die {
+  override get max() {
+    return 66
+  }
+
   override roll(): Roll {
     const rolls = [rollDice(6), rollDice(6)]
     return {
@@ -48,6 +53,10 @@ class StandardDie extends Die {
     this.number = parseInt(number)
     this.sides = parseInt(sides)
     this.modifier = parseInt(plusMinus + modifier)
+  }
+
+  override get max(): number {
+    return this.number * this.sides + this.modifier
   }
 
   override roll(): Roll {

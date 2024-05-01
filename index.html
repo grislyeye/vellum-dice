@@ -9,6 +9,14 @@
         location.reload(),
       )
     </script>
+
+    <style>
+      vellum-dice.fixed-width {
+        display: inline-block;
+        width: 93px;
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body>
@@ -17,5 +25,11 @@
 
     <h3>Roll with Animation</h3>
     <p>You have <vellum-dice animation>3d6+3</vellum-dice> Strength.</p>
+
+    <h3>Roll with fixed width</h3>
+    <p>
+      You have
+      <vellum-dice class="fixed-width" animation>3d6+3</vellum-dice> Strength.
+    </p>
   </body>
 </html>

@@ -7,6 +7,7 @@ Web component and interactive dice roller. Inspired by [javalent/dice-roller](ht
 | Attribute   | Description                               | Default |
 | ----------- | ----------------------------------------- | ------- |
 | `animation` | Juice the roll with a flash of pre-rolls. | `false` |
+| `min`       | Defines the success range as `>= min`. | _Optional_ |
 
 ### Examples
 
@@ -29,7 +30,7 @@ Include the `<script>` in your markup:
 ```html
 <script
   type="module"
-  src="https://www.unpkg.com/vellum-dice@0.1.0/vellum-dice.js"
+  src="https://www.unpkg.com/vellum-dice@0.2.0/vellum-dice.js"
 ></script>
 <p>You have <vellum-dice> 3d6+3 </vellum-dice> Strength.</p>
 ```

@@ -25,6 +25,9 @@ export class VellumDice extends LitElement {
   @property({ type: Boolean })
   animation: boolean = false
 
+  @property({ type: Number })
+  min: number | undefined
+
   get die(): Die | undefined {
     return this.textContent ? Die.from(this.textContent.trim()) : undefined
   }
@@ -43,9 +46,11 @@ export class VellumDice extends LitElement {
   }
 
   render() {
+    const roll = this.roll()
+
     return html`
-      <span @click="${this.reroll}">
-        ${this.roll()} (<slot></slot>&#9860;)
+      <span @click="${this.reroll}" class="${this.min && roll >= this.min ? 'success' : 'faulure'}">
+        ${roll} (<slot></slot>&#9860;)
       </span>
     `
   }

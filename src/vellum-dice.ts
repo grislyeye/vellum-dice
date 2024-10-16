@@ -44,7 +44,7 @@ export class VellumDice extends LitElement {
 
   render() {
     return html`
-      <span @click="${this.reroll}">
+      <span @click="${() => this.reroll()}">
         ${this.roll()} (<slot></slot>&#9860;)
       </span>
     `

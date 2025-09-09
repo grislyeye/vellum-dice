@@ -1,6 +1,6 @@
 {
   "name": "vellum-dice",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Web component and interactive dice roller. ",
   "author": "Ric Wood <ric@grislyeye.com>",
   "repository": "https://github.com/grislyeye/vellum-dice",

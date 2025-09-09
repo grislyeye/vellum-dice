@@ -25,6 +25,9 @@ export class VellumDice extends LitElement {
   @property({ type: Boolean })
   animation: boolean = false
 
+  @property({ type: Boolean })
+  hidedice: boolean = false
+
   get die(): Die | undefined {
     return this.textContent ? Die.from(this.textContent.trim()) : undefined
   }
@@ -45,7 +48,9 @@ export class VellumDice extends LitElement {
   render() {
     return html`
       <span @click="${() => this.reroll()}">
-        ${this.roll()} (<slot></slot>&#9860;)
+        ${this.roll()}${this.hidedice
+          ? html`&#9860`
+          : html` (<slot></slot>&#9860;)`}
       </span>
     `
   }

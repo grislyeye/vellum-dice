@@ -7,6 +7,7 @@ Web component and interactive dice roller. Inspired by [javalent/dice-roller](ht
 | Attribute   | Description                               | Default |
 | ----------- | ----------------------------------------- | ------- |
 | `animation` | Juice the roll with a flash of pre-rolls. | `false` |
+| `hidedice`  | Only display roll results.                | `false` |
 
 ### Examples
 

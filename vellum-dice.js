@@ -807,6 +807,7 @@
     constructor() {
       super(...arguments);
       this.animation = false;
+      this.hidedice = false;
     }
     get die() {
       return this.textContent ? Die.from(this.textContent.trim()) : void 0;
@@ -823,7 +824,7 @@
     render() {
       return x`
       <span @click="${() => this.reroll()}">
-        ${this.roll()} (<slot></slot>&#9860;)
+        ${this.roll()}${this.hidedice ? x`&#9860` : x` (<slot></slot>&#9860;)`}
       </span>
     `;
     }
@@ -839,6 +840,9 @@
   __decorateClass([
     n4({ type: Boolean })
   ], VellumDice.prototype, "animation", 2);
+  __decorateClass([
+    n4({ type: Boolean })
+  ], VellumDice.prototype, "hidedice", 2);
   VellumDice = __decorateClass([
     t3("vellum-dice")
   ], VellumDice);

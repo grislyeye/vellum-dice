@@ -48,9 +48,9 @@ export class VellumDice extends LitElement {
   render() {
     return html`
       <span @click="${() => this.reroll()}">
-        ${this.roll()}${this.hidedice
-          ? html`&#9860`
-          : html` (<slot></slot>&#9860;)`}
+        ${this.roll()}${
+          this.hidedice ? html`&#9860` : html` (<slot></slot>&#9860;)`
+        }
       </span>
     `
   }
